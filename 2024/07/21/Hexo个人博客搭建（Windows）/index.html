@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Comfyui+Docker+Ollama+OpenwebUI笔记 |  来者</title>
+      <title>Hexo个人博客搭建（Windows） |  来者</title>
   <meta name="generator" content="hexo-theme-ayer">
        
 <link rel="stylesheet" href="/dist/main.css">
@@ -62,7 +62,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Comfyui-Docker-Ollama-OpenwebUI笔记"
+  id="post-Hexo个人博客搭建（Windows）"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -73,7 +73,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Comfyui+Docker+Ollama+OpenwebUI笔记
+  Hexo个人博客搭建（Windows）
 </h1>
  
 
@@ -81,15 +81,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2024-07-19T06:49:56.000Z" itemprop="datePublished">2024-07-19</time>
+      <a href="/2024/07/21/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88Windows%EF%BC%89/" class="article-date">
+  <time datetime="2024-07-21T04:39:30.000Z" itemprop="datePublished">2024-07-21</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">589</span>
+            <span class="post-count">0</span>
         </span>
     </span>
 
@@ -98,49 +98,20 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2 分钟</span>
+            <span class="post-count">1 分钟</span>
         </span>
     </span>
 </div>
  
     </div>
       
-    <div class="tocbot"></div>
-
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="一、Docker（windows版本）"><a href="#一、Docker（windows版本）" class="headerlink" title="一、Docker（windows版本）"></a>一、Docker（windows版本）</h2><h2 id="二、Ollama（Llama3为例子）"><a href="#二、Ollama（Llama3为例子）" class="headerlink" title="二、Ollama（Llama3为例子）"></a>二、Ollama（Llama3为例子）</h2><h2 id="三、OpenwebUI"><a href="#三、OpenwebUI" class="headerlink" title="三、OpenwebUI"></a>三、OpenwebUI</h2><h3 id="（1）Github地址："><a href="#（1）Github地址：" class="headerlink" title="（1）Github地址："></a>（1）Github地址：</h3><p><a target="_blank" rel="noopener" href="https://github.com/open-webui/open-webui">open-webui&#x2F;open-webui</a></p>
-<h3 id="（2）确保-Ollama-在计算机上"><a href="#（2）确保-Ollama-在计算机上" class="headerlink" title="（2）确保 Ollama 在计算机上"></a>（2）<strong>确保 Ollama 在计算机上</strong></h3><p>请使用以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main</span><br></pre></td></tr></table></figure>
-
-<h3 id="（3）访问本地的OpenWebUI"><a href="#（3）访问本地的OpenWebUI" class="headerlink" title="（3）访问本地的OpenWebUI"></a>（3）访问本地的OpenWebUI</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:3000/</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/1.png" alt="1"></p>
-<h2 id="四、Comfyui"><a href="#四、Comfyui" class="headerlink" title="四、Comfyui"></a>四、Comfyui</h2><h3 id="（1）参考教程："><a href="#（1）参考教程：" class="headerlink" title="（1）参考教程："></a>（1）参考教程：</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Bi421e73X/?p=3&vd_source=0c4d2c8d0a9190a4bb7587a15f6341f2">2024最新的ConfyUI节点工作流详解</a></p>
-<h3 id="（2）详细理解"><a href="#（2）详细理解" class="headerlink" title="（2）详细理解"></a>（2）详细理解</h3><p>（SD有个webui其实和Comfyui是异曲同工的效果，后者更专注于工作流的形式去完成工作。）</p>
-<p>ComfyUI 是一个为Stable Diffusion专门设计的基于节点的图形用户界面（GUI）。它使用户能够通过链接不同的块（称为节点）来构建复杂的图像生成工作流程。这些节点可以包括各种任务，如加载检查点模型、输入提示、指定采样器等。</p>
-<p>它实际上就是一个比较专业的 Stable Diffusion 运行界面，只不过是节点式的。这种节点式界面其实广泛的存在于各种专业的生产力工具中，例如 Blender、虚幻引擎、达芬奇等。</p>
-<p><img src="/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/2.jpg" alt="2"></p>
-<h4 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h4><p>1）官方安装：Github地址：<a target="_blank" rel="noopener" href="https://github.com/comfyanonymous/ComfyUI/releases">Releases · comfyanonymous&#x2F;ComfyUI (github.com)</a></p>
-<p><img src="/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/3.png" alt="3"></p>
-<p>我们在完成安装包下载后，就可以直接运行 ComfyUI 了，双击「run_nvidia_gpu.bat」即可启动。</p>
-<p>2）启动器一键安装：（B站秋叶整合包：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ew411776J/?spm_id_from=333.337.search-card.all.click">【AI绘画】ComfyUI整合包发布！解压即用 一键启动 工作流版界面 超多节点 ☆更新 ☆汉化 秋叶整合包_哔哩哔哩_bilibili</a>）</p>
-<p>2、模型安装（\ComfyUI_windows_portable\ComfyUI\models）</p>
-<p>推荐模型网站：1）<a target="_blank" rel="noopener" href="https://civitai.com/models">Civitai Models | Discover Free Stable Diffusion Models</a>；2）<a target="_blank" rel="noopener" href="https://huggingface.co/models">Models - Hugging Face</a>.</p>
-<p>把下载的模型放到对应的模型类型的目录下即可。</p>
-<p><img src="/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/4.png" alt="4"></p>
-<h4 id="3、共享模型配置参考以上视频"><a href="#3、共享模型配置参考以上视频" class="headerlink" title="3、共享模型配置参考以上视频"></a>3、共享模型配置参考以上视频</h4><h4 id="4、自定义节点设置"><a href="#4、自定义节点设置" class="headerlink" title="4、自定义节点设置"></a>4、自定义节点设置</h4><p>（自定义节点文件都是放在 ComfyUI 的「custom_nodes」目录中）</p>
-<p>1）在线安装在custom_nodes目录下用git clone即可；</p>
-<p>2）<a target="_blank" rel="noopener" href="https://github.com/ltdrdata/ComfyUI-Manager">https://github.com/ltdrdata/ComfyUI-Manager</a> 直接本地下载仓库；</p>
-<p>3）启动器安装.</p>
-<h4 id="5、汉化节点安装通过“节点管理器「ComfyUI-Manager」”搜索“translate”来安装，记得用bat重启一次进行更新库。"><a href="#5、汉化节点安装通过“节点管理器「ComfyUI-Manager」”搜索“translate”来安装，记得用bat重启一次进行更新库。" class="headerlink" title="5、汉化节点安装通过“节点管理器「ComfyUI Manager」”搜索“translate”来安装，记得用bat重启一次进行更新库。"></a>5、<strong>汉化节点安装</strong>通过“节点管理器「ComfyUI Manager」”搜索“translate”来安装，记得用bat重启一次进行更新库。</h4><h4 id="6、剩下操作就是ComfyUI-Manager和一些节点、加载器做的文生图、视频多模态的工作流任务了。"><a href="#6、剩下操作就是ComfyUI-Manager和一些节点、加载器做的文生图、视频多模态的工作流任务了。" class="headerlink" title="6、剩下操作就是ComfyUI Manager和一些节点、加载器做的文生图、视频多模态的工作流任务了。"></a>6、剩下操作就是ComfyUI Manager和一些节点、加载器做的文生图、视频多模态的工作流任务了。</h4><h2 id="五、配置OpenwebUI"><a href="#五、配置OpenwebUI" class="headerlink" title="五、配置OpenwebUI"></a>五、配置OpenwebUI</h2><h3 id="（1）Ollama-API"><a href="#（1）Ollama-API" class="headerlink" title="（1）Ollama API"></a>（1）<strong>Ollama API</strong></h3><p><img src="/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/5.png" alt="5"></p>
-<h3 id="（2）关联ComfyUI"><a href="#（2）关联ComfyUI" class="headerlink" title="（2）关联ComfyUI"></a>（2）<strong>关联ComfyUI</strong></h3><p><img src="/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/6.png" alt="6"></p>
-<h3 id="（3）Llama-Comfyui绘制图"><a href="#（3）Llama-Comfyui绘制图" class="headerlink" title="（3）Llama+Comfyui绘制图"></a>（3）Llama+Comfyui绘制图</h3><p><img src="/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/7.png" alt="7"></p>
- 
+   
       <!-- reward -->
       
     </div>
@@ -192,7 +163,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lucki-ly.github.io/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lucki-ly.github.io/2024/07/21/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88Windows%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -203,19 +174,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2024/07/21/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88Windows%EF%BC%89/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Hexo个人博客搭建（Windows）
-          
-        </div>
-      </a>
     
-    
-      <a href="/2024/07/19/%E5%9F%BA%E4%BA%8EYOLOv5m%E5%92%8CDeepSORT%E7%9A%84%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B%E7%B3%BB%E7%BB%9F/" class="article-nav-link">
+      <a href="/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">基于YOLOv5m和DeepSORT的智能交通流量监测系统</div>
+        <div class="article-nav-title">Comfyui+Docker+Ollama+OpenwebUI笔记</div>
       </a>
     
   </nav>
