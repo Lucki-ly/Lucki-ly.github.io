@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Hexo个人博客搭建（Windows） |  来者</title>
+      <title>YOLOv5和DeepSORT的智能交通流量监测系统 |  来者</title>
   <meta name="generator" content="hexo-theme-ayer">
        
 <link rel="stylesheet" href="/dist/main.css">
@@ -62,7 +62,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Hexo个人博客搭建（Windows）"
+  id="post-YOLOv5和DeepSORT的智能交通流量监测系统"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -73,7 +73,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Hexo个人博客搭建（Windows）
+  YOLOv5和DeepSORT的智能交通流量监测系统
 </h1>
  
 
@@ -81,15 +81,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/07/21/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88Windows%EF%BC%89/" class="article-date">
-  <time datetime="2024-07-21T04:39:30.000Z" itemprop="datePublished">2024-07-21</time>
+      <a href="/2024/07/22/YOLOv5%E5%92%8CDeepSORT%E7%9A%84%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time datetime="2024-07-22T06:31:54.000Z" itemprop="datePublished">2024-07-22</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">524</span>
+            <span class="post-count">723</span>
         </span>
     </span>
 
@@ -98,7 +98,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2 分钟</span>
+            <span class="post-count">3 分钟</span>
         </span>
     </span>
 </div>
@@ -113,60 +113,60 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="一、git工具安装"><a href="#一、git工具安装" class="headerlink" title="一、git工具安装"></a>一、git工具安装</h2><p>官网：<a target="_blank" rel="noopener" href="https://git-scm.com/">Git (git-scm.com)</a></p>
-<p>安装后鼠标右键可以看到就是安装成功了。</p>
-<p><img src="/2024/07/21/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88Windows%EF%BC%89/1.png" alt="1"></p>
-<h2 id="二、node-js安装"><a href="#二、node-js安装" class="headerlink" title="二、node.js安装"></a>二、node.js安装</h2><p>官网：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn">Node.js — 在任何地方运行 JavaScript (nodejs.org)</a><br>安装后，鼠标右键选择“Open Git Bash here”：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v                                                     #查看node版本</span><br></pre></td></tr></table></figure>
+  <h2 id="一、Yolov5的环境搭建"><a href="#一、Yolov5的环境搭建" class="headerlink" title="一、Yolov5的环境搭建"></a>一、Yolov5的环境搭建</h2><h2 id="（1）软硬件配置："><a href="#（1）软硬件配置：" class="headerlink" title="（1）软硬件配置："></a>（1）软硬件配置：</h2><p>1）软件配置：</p>
+<p>python版本（3.9.7）+pytorch版本（2.0.0+cu117）+anaconda</p>
+<p>2）硬件配置：Window 10（64位）+Nvidia Geforce 1080ti</p>
+<h2 id="（2）需要安装的包："><a href="#（2）需要安装的包：" class="headerlink" title="（2）需要安装的包："></a>（2）需要安装的包：</h2><p>1）依赖库，用下面命令安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v                                                       #查看npm版本</span><br></pre></td></tr></table></figure>
+<p>2）opencv、torchreid等手动安装，直接pip install xxx即可。</p>
+<h2 id="（3）问题和解决方法："><a href="#（3）问题和解决方法：" class="headerlink" title="（3）问题和解决方法："></a>（3）问题和解决方法：</h2><p>1）遇到报错“UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.”</p>
+<p>解决方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Cython</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=http://registry.npm.taobao.org   #安装cnpm</span><br></pre></td></tr></table></figure>
+<p>2）遇到报错“AttributeError: module ‘numpy‘ has no attribute ‘float‘“</p>
+<p>解决方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 更低版本的numpy(最好是和python版本对应的)</span><br></pre></td></tr></table></figure>
 
-<p>遇到的问题：npm安装时一直idealTree:npm: sill idealTree buildDeps<br>解决方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+<p>3）遇到报错no module named “torchreid”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不要pip install torchreid</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry                                   #查看是否安装成功</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install https://github.com/KaiyangZhou/deep-person-reid/archive/master.zip</span><br></pre></td></tr></table></figure>
 
-<p>然后接着：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli                                    #安装hexo框架 </span><br></pre></td></tr></table></figure>
+<p>遇到网络错误，就直接本地下载，然后pip install；</p>
+<p>遇到C++报错，如下：</p>
+<p><img src="/2024/07/22/YOLOv5%E5%92%8CDeepSORT%E7%9A%84%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B%E7%B3%BB%E7%BB%9F/1.png" alt="1"></p>
+<p>解决方法：<a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/">Visual Studio 官网地址</a></p>
+<p>勾选”使用C++的桌面开发“这个组件再运行上面的命令就解决了。</p>
+<h2 id="二、代码介绍"><a href="#二、代码介绍" class="headerlink" title="二、代码介绍"></a>二、代码介绍</h2><p>这里介绍修改的内容：（1）main.py；（2）webui.py</p>
+<p>main和webui功能上差别不大，区别在于前者是做程序命令，运行完就没了；后者是一个UI界面，可以一直提交任务。</p>
+<p>整个代码分为detect函数和一个主函数，我改的是detect函数。所以我把detect代码分为这三大块：</p>
+<h3 id="1）初始化代码（包括deepsort模型、数据加载器、追踪器等）；"><a href="#1）初始化代码（包括deepsort模型、数据加载器、追踪器等）；" class="headerlink" title="1）初始化代码（包括deepsort模型、数据加载器、追踪器等）；"></a>1）初始化代码（包括deepsort模型、数据加载器、追踪器等）；</h3><h3 id="2）数据处理（预测、NMS非极大值抑制、检测结果后处理）；"><a href="#2）数据处理（预测、NMS非极大值抑制、检测结果后处理）；" class="headerlink" title="2）数据处理（预测、NMS非极大值抑制、检测结果后处理）；"></a>2）数据处理（预测、NMS非极大值抑制、检测结果后处理）；</h3><p>1、在代码的开头定义一个全局字典，用于存储识别结果和计数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">global count_dict</span><br><span class="line">count_dict = &#123;&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v                                                     #查看hexo版本</span><br></pre></td></tr></table></figure>
+<p>2、对线宽进行增大，可视化更可观。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">annotator = Annotator(im0, line_width=10, pil=not ascii)  #标签处理</span><br></pre></td></tr></table></figure>
 
-<h2 id="三、hexo配置和初始化"><a href="#三、hexo配置和初始化" class="headerlink" title="三、hexo配置和初始化"></a>三、hexo配置和初始化</h2><p>然后创建blog目录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog                                                     #进入blog目录</span><br></pre></td></tr></table></figure>
+<h3 id="3）可视化"><a href="#3）可视化" class="headerlink" title="3）可视化"></a>3）可视化</h3><p>show_vid显示视频参数、save_vid保存视频参数和打印结果，可视化改动比较大，也是主要的任务：</p>
+<p>1、对于show_vid显示视频参数：</p>
+<p>a）动态显示当前检测到的每种类别的数量：</p>
+<pre><code>y_offset = 120
+for class_name, count in count_dict.items():
+    cv2.putText(im0, f&#39;&#123;class_name&#125;: &#123;count&#125;&#39;, (10, y_offset), cv2.FONT_HERSHEY_SIMPLEX, 6, (0, 255, 0), 5)
+    y_offset += 200  
+</code></pre>
+<p>b）创建一个用于显示的缩放图像：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">display_scale_percent = 25  # 调整显示窗口的缩放比例</span><br><span class="line">display_width = int(im0.shape[1] * display_scale_percent / 100)</span><br><span class="line">display_height = int(im0.shape[0] * display_scale_percent / 100)</span><br><span class="line">display_dim = (display_width, display_height)</span><br><span class="line">im0_display = cv2.resize(im0, display_dim, interpolation=cv2.INTER_AREA)</span><br><span class="line">            </span><br><span class="line">cv2.imshow(str(p), im0_display)</span><br><span class="line">cv2.waitKey(1)  # 1 millisecond</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init                                              #生成博客 初始化博客</span><br></pre></td></tr></table></figure>
+<p>2、对于save_vid保存视频参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># yield imres,im</span><br><span class="line">if vid_path[i] != save_path:  # new video</span><br><span class="line">	vid_path[i] = save_path</span><br><span class="line">	if isinstance(vid_writer[i], cv2.VideoWriter):</span><br><span class="line">		vid_writer[i].release()  # release previous video writer</span><br><span class="line">	if vid_cap:  # video</span><br><span class="line">		fps = vid_cap.get(cv2.CAP_PROP_FPS)</span><br><span class="line">		w = int(vid_cap.get(cv2.CAP_PROP_FRAME_WIDTH))</span><br><span class="line">		h = int(vid_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))</span><br><span class="line">	else:  # stream</span><br><span class="line">		fps, w, h = 30, im0.shape[1], im0.shape[0]</span><br><span class="line">	save_path = str(Path(save_path).with_suffix(&#x27;.mp4&#x27;))  # force *.mp4 suffix on results videos</span><br><span class="line">	vid_writer[i] = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*&#x27;mp4v&#x27;), fps, (w, h))</span><br><span class="line">vid_writer[i].write(im0)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s                                                    #启动本地博客服务</span><br></pre></td></tr></table></figure>
+<p>3、删掉了Count_obj函数。</p>
+<h2 id="三、运行方法"><a href="#三、运行方法" class="headerlink" title="三、运行方法"></a>三、运行方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd xxx\Vedio\code\VehicleCountor</span><br><span class="line">python main.py --save-vid --output \xxx\xxx\1\Vedio\code\VehicleCountor\inference\output</span><br></pre></td></tr></table></figure>
 
-<p>本地访问地址：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> ，不能访问就输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 4001</span><br></pre></td></tr></table></figure>
-
-<p>地址就变成：<a target="_blank" rel="noopener" href="http://localhost:4001/%EF%BC%8CCrtl+C%E9%80%80%E5%87%BA%E3%80%82">http://localhost:4001/，Crtl+C退出。</a></p>
-<p>这里</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的第一篇文章&quot;                                        #创建新的文章</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、Github设置"><a href="#四、Github设置" class="headerlink" title="四、Github设置"></a>四、Github设置</h2><p>在我们的github主页新建一个仓库，名字一定要是：YourGithubName.github.io</p>
-<p>然后在blog目录中找到_config.yml文件，打开它，在最后的部分修改：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">  deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourGithubName/YourGithubName.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
-
-<p>（注意缩进两格和冒号后面一格）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d                                                 #部署到Github仓库里</span><br></pre></td></tr></table></figure>
-
-<p>访问这个地址可以查看博客：<a target="_blank" rel="noopener" href="https://yourgithubname.github.io/">https://YourGithubName.github.io/</a></p>
-<p>主题美化：（以yilia为主题）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
-
-<p>修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
-<h2 id="五、遇到的问题"><a href="#五、遇到的问题" class="headerlink" title="五、遇到的问题"></a>五、遇到的问题</h2><h3 id="（1）hexo博客中插入图片失败"><a href="#（1）hexo博客中插入图片失败" class="headerlink" title="（1）hexo博客中插入图片失败"></a>（1）hexo博客中插入图片失败</h3><p>1、将<code>_config.yml</code> 文件中的<code>post_asset_folder</code> 选项设为 <code>true</code> 来打开。</p>
-<p>2、typora（Markdown编辑器）图像设置：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法_hexo 文章插入图片失败-CSDN博客</a></p>
-<p>3、插件下载：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-
-<p>4、注意格式：去掉前面的路径</p>
-<p><img src="/2024/07/21/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88Windows%EF%BC%89/2.png" alt="2"></p>
-<h3 id="（2）github上传问题"><a href="#（2）github上传问题" class="headerlink" title="（2）github上传问题"></a>（2）github上传问题</h3><h3 id="Github上传代码及解决main主分支问题-本地分支为main拉代码拉不下来-CSDN博客"><a href="#Github上传代码及解决main主分支问题-本地分支为main拉代码拉不下来-CSDN博客" class="headerlink" title="Github上传代码及解决main主分支问题_本地分支为main拉代码拉不下来-CSDN博客"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/Arcofcosmos/article/details/112862038">Github上传代码及解决main主分支问题_本地分支为main拉代码拉不下来-CSDN博客</a></h3> 
+<h2 id="四、项目结果"><a href="#四、项目结果" class="headerlink" title="四、项目结果"></a>四、项目结果</h2><p><img src="/2024/07/22/YOLOv5%E5%92%8CDeepSORT%E7%9A%84%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B%E7%B3%BB%E7%BB%9F/2.jpg" alt="2"></p>
+<p><img src="/2024/07/22/YOLOv5%E5%92%8CDeepSORT%E7%9A%84%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B%E7%B3%BB%E7%BB%9F/3.jpg" alt="3"></p>
+ 
       <!-- reward -->
       
     </div>
@@ -218,7 +218,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lucki-ly.github.io/2024/07/21/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88Windows%EF%BC%89/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lucki-ly.github.io/2024/07/22/YOLOv5%E5%92%8CDeepSORT%E7%9A%84%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B%E7%B3%BB%E7%BB%9F/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -229,19 +229,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2024/07/22/YOLOv5%E5%92%8CDeepSORT%E7%9A%84%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B%E7%B3%BB%E7%BB%9F/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            YOLOv5和DeepSORT的智能交通流量监测系统
-          
-        </div>
-      </a>
     
-    
-      <a href="/2024/07/19/Comfyui-Docker-Ollama-OpenwebUI%E7%AC%94%E8%AE%B0/" class="article-nav-link">
+      <a href="/2024/07/21/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88Windows%EF%BC%89/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Comfyui+Docker+Ollama+OpenwebUI笔记</div>
+        <div class="article-nav-title">Hexo个人博客搭建（Windows）</div>
       </a>
     
   </nav>
