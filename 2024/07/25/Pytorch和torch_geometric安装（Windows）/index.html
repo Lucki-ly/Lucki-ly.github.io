@@ -158,17 +158,17 @@
 <h3 id="（2）离线whl安装"><a href="#（2）离线whl安装" class="headerlink" title="（2）离线whl安装"></a>（2）离线whl安装</h3><p>1）先进入pyg的官网whl地址：<a target="_blank" rel="noopener" href="https://data.pyg.org/whl/">data.pyg.org&#x2F;whl&#x2F;</a></p>
 <p>2）根据我们自己的电脑系统版本、python版本、CPU（GPU）版本、torch版本下载对应的whl：</p>
 <p>首先，根据torch版本、cpu&#x2F;cuda版本选择：<br><img src="/2024/07/25/Pytorch%E5%92%8Ctorch_geometric%E5%AE%89%E8%A3%85%EF%BC%88Windows%EF%BC%89/2.png" alt="2"></p>
-<p>举个例子：这里的”</p>
+<p>举个例子：这里的</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch-2.3.0+cu121</span><br></pre></td></tr></table></figure>
 
-<p>“<br>就是说torch版本是2.3.0，cuda版本是12.1。</p>
+<p>就是说torch版本是2.3.0，cuda版本是12.1。</p>
 <p>然后点击进去，</p>
 <p>我们要下载四个whl（版本越新越好）：torch_cluster、torch_scatter、torch_sparse和torch_spline_conv。</p>
 <p>然后根据你的电脑版本、python版本、cpu&#x2F;cuda版本选择：<br><img src="/2024/07/25/Pytorch%E5%92%8Ctorch_geometric%E5%AE%89%E8%A3%85%EF%BC%88Windows%EF%BC%89/3.png" alt="3"></p>
-<p>举个例子：这里的”</p>
+<p>举个例子：这里的</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch_scatter-2.1.2+pt23cu121-cp310-cp310-win_amd64.whl</span><br></pre></td></tr></table></figure>
 
-<p>“<br>就是说torch_scatter版本是2.1.2，cuda版本是12.1，python版本是3.10系列的，电脑系统版本是Windows x64。</p>
+<p>就是说torch_scatter版本是2.1.2，cuda版本是12.1，python版本是3.10系列的，电脑系统版本是Windows x64。</p>
 <p>下载到你看得到的文件目录中。</p>
 <p>3）安装whl文件和pyg库</p>
 <p>回到anaconda prompt（虚拟环境中的）进入到下载的目录中，输入：</p>
