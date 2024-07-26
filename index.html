@@ -71,7 +71,7 @@
       <h1><a href="/">来者</a></h1>
       <div id="subtitle-box">
         
-          <span id="subtitle"></span>
+        <span id="subtitle"></span>
         
       </div>
       <div>
@@ -86,9 +86,26 @@
 
 
 
+<script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script>
+
 
 <!-- Subtitle -->
 
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['你就是自己的光', '最艰难的时刻 成长最快', '愿你内心强大 照亮前路'],
+        startDelay: 0,
+        typeSpeed: 70,
+        loop: true,
+        backSpeed: 80,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
 <div id="main">
   <section class="outer">
   
@@ -489,7 +506,7 @@
   <ul class="nav nav-main">
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/">主页</a>
+      <a class="nav-item-link" href="/subtitle">主页</a>
     </li>
     
     <li class="nav-item">
