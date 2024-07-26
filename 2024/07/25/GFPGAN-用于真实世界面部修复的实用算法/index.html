@@ -120,7 +120,7 @@
   <h2 id="一、GFPGAN"><a href="#一、GFPGAN" class="headerlink" title="一、GFPGAN"></a>一、GFPGAN</h2><h3 id="（1）介绍"><a href="#（1）介绍" class="headerlink" title="（1）介绍"></a>（1）介绍</h3><p>官网地址：<a target="_blank" rel="noopener" href="https://github.com/TencentARC/GFPGAN/tree/master">TencentARC&#x2F;GFPGAN: GFPGAN aims at developing Practical Algorithms for Real-world Face Restoration. (github.com)</a></p>
 <p>这个GFPGAN是一种图像修复的算法，可以把破旧模糊的图片还原成清晰可见的照片。</p>
 <p>一点也不夸张，我试了一下，把一个64x64的照片变成256x256分辨率的清晰照片，非常高清。</p>
-<p>这个算法是基于这个叫<a target="_blank" rel="noopener" href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a>的项目，所以都是一步步迭代上来的，挺了不起的！感兴趣的朋友可以去复现一下。这里面还有需要注意的两个项目包，前面的real-rsrgan和gfpgan都是基于下面两个基础上完成的：</p>
+<p>这个算法是基于这个叫<a target="_blank" rel="noopener" href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a>的项目，所以都是一步步迭代上来的，挺了不起的！感兴趣的朋友可以去复现一下。这里面还有需要注意的两个项目包，前面的<code>real-rsrgan</code>和<code>gfpgan</code>都是基于下面两个基础上完成的：</p>
 <p> <a target="_blank" rel="noopener" href="https://github.com/xinntao/BasicSR">BasicSR</a>: An open-source image and video restoration toolbox<br><a target="_blank" rel="noopener" href="https://github.com/xinntao/facexlib">facexlib</a>: A collection that provides useful face-relation functions</p>
 <p>basicsr负责的是图像和视频修复，这个是最厉害的工具，而facexlib是提供面部关系一个函数库，提高修复效果。<br>论文：GFP-GAN: Towards Real-World Blind Face Restoration with Generative Facial Prior</p>
 <h3 id="（2）安装环境"><a href="#（2）安装环境" class="headerlink" title="（2）安装环境"></a>（2）安装环境</h3><p>1）主要是python≥3.7、pytorch≥1.7、一块GPU显卡</p>

@@ -123,7 +123,7 @@
 <h2 id="（2）需要安装的包："><a href="#（2）需要安装的包：" class="headerlink" title="（2）需要安装的包："></a>（2）需要安装的包：</h2><p>1）依赖库，用下面命令安装：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
 
-<p>2）opencv、torchreid等手动安装，直接pip install xxx即可。</p>
+<p>2）opencv、torchreid等手动安装，直接<code>pip install xxx</code>即可。</p>
 <h2 id="（3）问题和解决方法："><a href="#（3）问题和解决方法：" class="headerlink" title="（3）问题和解决方法："></a>（3）问题和解决方法：</h2><p>1）遇到报错“UserWarning: Cython evaluation (very fast so highly recommended) is unavailable, now use python evaluation.”</p>
 <p>解决方法：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Cython</span><br></pre></td></tr></table></figure>
@@ -137,23 +137,23 @@
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install https://github.com/KaiyangZhou/deep-person-reid/archive/master.zip</span><br></pre></td></tr></table></figure>
 
-<p>遇到网络错误，就直接本地下载，然后pip install；</p>
+<p>遇到网络错误，就直接本地下载，然后<code>pip install</code>；</p>
 <p>遇到C++报错，如下：</p>
 <p><img src="/2024/07/22/YOLOv5%E5%92%8CDeepSORT%E7%9A%84%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B%E7%B3%BB%E7%BB%9F/1.png" alt="1"></p>
 <p>解决方法：<a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/">Visual Studio 官网地址</a></p>
-<p>勾选”使用C++的桌面开发“这个组件再运行上面的命令就解决了。</p>
+<p>勾选<code>使用C++的桌面开发</code>这个组件再运行上面的命令就解决了。</p>
 <h2 id="二、代码介绍"><a href="#二、代码介绍" class="headerlink" title="二、代码介绍"></a>二、代码介绍</h2><p>代码地址：<a target="_blank" rel="noopener" href="https://github.com/Lucki-ly/High-speed-video-detection">https://github.com/Lucki-ly/High-speed-video-detection</a></p>
 <p>这里介绍修改的内容：（1）main.py；（2）webui.py</p>
 <p>main和webui功能上差别不大，区别在于前者是做程序命令，运行完就没了；后者是一个UI界面，可以一直提交任务。</p>
-<p>整个代码分为detect函数和一个主函数，我改的是detect函数。所以我把detect代码分为这三大块：</p>
+<p>整个代码分为<code>detect</code>函数和一个主函数，我改的是<code>detect</code>函数。所以我把<code>detect</code>代码分为这三大块：</p>
 <h3 id="1）初始化代码（包括deepsort模型、数据加载器、追踪器等）；"><a href="#1）初始化代码（包括deepsort模型、数据加载器、追踪器等）；" class="headerlink" title="1）初始化代码（包括deepsort模型、数据加载器、追踪器等）；"></a>1）初始化代码（包括deepsort模型、数据加载器、追踪器等）；</h3><h3 id="2）数据处理（预测、NMS非极大值抑制、检测结果后处理）；"><a href="#2）数据处理（预测、NMS非极大值抑制、检测结果后处理）；" class="headerlink" title="2）数据处理（预测、NMS非极大值抑制、检测结果后处理）；"></a>2）数据处理（预测、NMS非极大值抑制、检测结果后处理）；</h3><p>1、在代码的开头定义一个全局字典，用于存储识别结果和计数：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">global</span> count_dict</span><br><span class="line">count_dict = &#123;&#125;</span><br></pre></td></tr></table></figure>
 
 <p>2、对线宽进行增大，可视化更可观。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">annotator = Annotator(im0, line_width=<span class="number">10</span>, pil=<span class="keyword">not</span> <span class="built_in">ascii</span>)  <span class="comment">#标签处理</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="3）可视化"><a href="#3）可视化" class="headerlink" title="3）可视化"></a>3）可视化</h3><p>show_vid显示视频参数、save_vid保存视频参数和打印结果，可视化改动比较大，也是主要的任务：</p>
-<p>1、对于show_vid显示视频参数：</p>
+<h3 id="3）可视化"><a href="#3）可视化" class="headerlink" title="3）可视化"></a>3）可视化</h3><p><code>show_vid</code>显示视频参数、<code>save_vid</code>保存视频参数和打印结果，可视化改动比较大，也是主要的任务：</p>
+<p>1、对于<code>show_vid</code>显示视频参数：</p>
 <p>a）动态显示当前检测到的每种类别的数量：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">y_offset = <span class="number">120</span></span><br><span class="line"><span class="keyword">for</span> class_name, count <span class="keyword">in</span> count_dict.items():</span><br><span class="line">    cv2.putText(im0, <span class="string">f&#x27;<span class="subst">&#123;class_name&#125;</span>: <span class="subst">&#123;count&#125;</span>&#x27;</span>, (<span class="number">10</span>, y_offset), cv2.FONT_HERSHEY_SIMPLEX, <span class="number">6</span>, (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">5</span>)</span><br><span class="line">    y_offset += <span class="number">200</span>  </span><br></pre></td></tr></table></figure>
 
