@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ComfyUI的学习笔记</title>
+      <link href="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <url>/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<p>推荐教程：</p><p>（1）<a href="https://www.bilibili.com/video/BV1sW42197fN?p=1&vd_source=0c4d2c8d0a9190a4bb7587a15f6341f2">https://www.bilibili.com/video/BV1sW42197fN?p=1&amp;vd_source=0c4d2c8d0a9190a4bb7587a15f6341f2</a></p><p>（2）<a href="https://www.bilibili.com/video/BV13b4y1G7s9/?spm_id_from=333.788&vd_source=0c4d2c8d0a9190a4bb7587a15f6341f2">https://www.bilibili.com/video/BV13b4y1G7s9/?spm_id_from=333.788&amp;vd_source=0c4d2c8d0a9190a4bb7587a15f6341f2</a></p><p>（3）<a href="https://www.bilibili.com/video/BV1Bi421e73X/?p=1&vd_source=0c4d2c8d0a9190a4bb7587a15f6341f2">https://www.bilibili.com/video/BV1Bi421e73X/?p=1&amp;vd_source=0c4d2c8d0a9190a4bb7587a15f6341f2</a></p><h2 id="一、原理"><a href="#一、原理" class="headerlink" title="一、原理"></a>一、原理</h2><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1.png" alt="1"></p><p>整个大模型Checkpoint包括VAE、CLIP、Latent、U-net这几个部分组件。</p><p>（1）大模型（ControlNet、Lora等）包括以下：</p><p>.ckpt：基于TensorFlow框架；</p><p>.h5：基于Keras框架；</p><p>.pt&#x2F;.pth：基于PyTorch框架；</p><p>.onnx：开发式标准格式。</p><p>（2）Stable Diffusion架构分类：</p><p>SD1.x：如SD1.x lighting</p><p>SDXL：如SDXL Hyper</p><p>SD3：如….</p><h2 id="二、文生图"><a href="#二、文生图" class="headerlink" title="二、文生图"></a>二、文生图</h2><p>（1）工作流介绍</p><p>1）checkpoint加载器：以majic写实模型为例子</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2.png" alt="2"></p><p>2）CLIP文本编码器：正向、负向提示词</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/3.png" alt="3"></p><p>3）K采样器：去噪过程</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/4.png" alt="4"></p><p>4）空Latent：存放空间</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/5.png" alt="5"></p><p>5）VAE解码器：</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/6.png" alt="6"></p><p>最后是整体的工作流：</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/7.png" alt="7"></p><p>（2）生成后的图片</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/8.png" alt="8"></p><h2 id="三、VAE、Lora和ControlNet模块"><a href="#三、VAE、Lora和ControlNet模块" class="headerlink" title="三、VAE、Lora和ControlNet模块"></a>三、VAE、Lora和ControlNet模块</h2><p>（1）VAE</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/9.png" alt="9"></p><p>（2）Lora</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/10.png" alt="10"></p><p>（3）ControlNet</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/11.png" alt="11"></p><h2 id="四、图生图"><a href="#四、图生图" class="headerlink" title="四、图生图"></a>四、图生图</h2><p>（1）图生图：</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/12.png" alt="12"></p><p>（2）VAE内补编码器：</p><p>VAE编码器：</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/13.png" alt="13"></p><p>VAE内补编码器：</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/14.png" alt="14"></p><p>图像对比：</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/15.jpg" alt="15"></p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/16.jpg" alt="16"></p><p>（3）设置Latent噪波遮罩；</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/17.png" alt="17"></p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/18.png" alt="18"></p><p>图像为：</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/19.jpg" alt="19"></p><h2 id="五、扩展图片"><a href="#五、扩展图片" class="headerlink" title="五、扩展图片"></a>五、扩展图片</h2><p>常见两种放大方法（latent按系数和图像通过模型放大）：</p><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/20.png" alt="20"></p><h2 id="六、图像裁剪（缩放）"><a href="#六、图像裁剪（缩放）" class="headerlink" title="六、图像裁剪（缩放）"></a>六、图像裁剪（缩放）</h2><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/21.png" alt="21"></p><h2 id="七、反推图片提示词"><a href="#七、反推图片提示词" class="headerlink" title="七、反推图片提示词"></a>七、反推图片提示词</h2><p><img src="/2024/08/11/ComfyUI%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/22.png" alt="22"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> LLM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>GFPGAN:用于真实世界面部修复的实用算法</title>
       <link href="/2024/07/25/GFPGAN-%E7%94%A8%E4%BA%8E%E7%9C%9F%E5%AE%9E%E4%B8%96%E7%95%8C%E9%9D%A2%E9%83%A8%E4%BF%AE%E5%A4%8D%E7%9A%84%E5%AE%9E%E7%94%A8%E7%AE%97%E6%B3%95/"/>
       <url>/2024/07/25/GFPGAN-%E7%94%A8%E4%BA%8E%E7%9C%9F%E5%AE%9E%E4%B8%96%E7%95%8C%E9%9D%A2%E9%83%A8%E4%BF%AE%E5%A4%8D%E7%9A%84%E5%AE%9E%E7%94%A8%E7%AE%97%E6%B3%95/</url>
